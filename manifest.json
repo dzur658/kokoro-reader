@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Kokoro Reader",
+  "version": "1.0.0",
+  "description": "High-quality text-to-speech using Kokoro TTS technology",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Kokoro Reader"
+  },
+  "background": {
+    "service_worker": "src/background/background.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "exclude_matches": [
+        "*://chrome.google.com/*",
+        "*://chromewebstore.google.com/*",
+        "*://chrome://extensions/*"
+      ],
+      "js": ["src/content/content.ts"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/display/display.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "src/assets/icons/icon-16.png",
+    "48": "src/assets/icons/icon-48.png",
+    "128": "src/assets/icons/icon-128.png"
+  }
+}
