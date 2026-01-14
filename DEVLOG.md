@@ -92,3 +92,10 @@ Chrome extension that extracts readable content from web pages using Mozilla's R
 - **Security Focus**: Proactive XSS prevention with DOMPurify
 - **Modern Tooling**: Vite + CRXJS for efficient Chrome extension development
 - **Type Safety**: Strict TypeScript configuration for better code quality
+
+---
+## January 14, 2026 - Icon Design and Bug Fixes [1h]
+- **Icon Design**: Icon generated from nano banana pro
+- **Icon sizing**: Sized icons for Manifest v3 (128px, 48px, 16px)
+- **`Manifest.json` changes**: Manually, removed unecessary excluded content causing the extension not to load (unecessary as extensions were already blocked from those pages by default),
+and reassigned icon paths. 
