@@ -62,9 +62,11 @@ kokoro-reader/
 
 ## Technical Details
 
+- **Frontend Framework**: React 18 with TypeScript
 - **Manifest Version**: 3 (latest Chrome extension standard)
-- **Build Tool**: Vite with CRXJS plugin
+- **Build Tool**: Vite with CRXJS plugin and @vitejs/plugin-react
 - **Content Extraction**: @mozilla/readability library
+- **Security**: DOMPurify for HTML sanitization
 - **Permissions**: activeTab (for content access), storage (for temporary data)
 
 ## Development
@@ -79,10 +81,10 @@ npm run preview # Preview built extension
 
 ### Architecture
 
-1. **Popup** (`src/popup/`) - User interface for triggering content extraction
+1. **Popup** (`src/popup/`) - React-based user interface for triggering content extraction
 2. **Content Script** (`src/content/`) - Injected into web pages to extract content using Readability
 3. **Background Script** (`src/background/`) - Manages extension lifecycle and tab creation
-4. **Display Page** (`src/display/`) - Shows extracted content in a clean, readable format
+4. **Display Page** (`src/display/`) - React component that shows extracted content in a clean, readable format
 
 ## Future Enhancements
 

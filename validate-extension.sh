@@ -24,11 +24,11 @@ echo "✅ manifest.json exists"
 # Check required files
 required_files=(
     "dist/service-worker-loader.js"
-    "dist/src/popup/popup.html"
-    "dist/src/display/display.html"
-    "dist/src/assets/icons/icon-16.png"
-    "dist/src/assets/icons/icon-48.png"
-    "dist/src/assets/icons/icon-128.png"
+    "dist/src/popup/index.html"
+    "dist/src/display/index.html"
+    "dist/src/assets/icons/kokoro_reader_16.png"
+    "dist/src/assets/icons/kokoro_reader_48.png"
+    "dist/src/assets/icons/kokoro_reader_128.png"
 )
 
 for file in "${required_files[@]}"; do

@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     try {
       // Create new tab with extracted content
       chrome.tabs.create({
-        url: chrome.runtime.getURL('src/display/display.html')
+        url: chrome.runtime.getURL('src/display/index.html')
       }, (tab) => {
         if (chrome.runtime.lastError) {
           console.error('Failed to create tab:', chrome.runtime.lastError.message);

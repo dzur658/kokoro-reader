@@ -98,4 +98,22 @@ Chrome extension that extracts readable content from web pages using Mozilla's R
 - **Icon Design**: Icon generated from nano banana pro
 - **Icon sizing**: Sized icons for Manifest v3 (128px, 48px, 16px)
 - **`Manifest.json` changes**: Manually, removed unecessary excluded content causing the extension not to load (unecessary as extensions were already blocked from those pages by default),
-and reassigned icon paths. 
+and reassigned icon paths.
+
+---
+
+## January 16, 2026 - React Migration & Security Fixes [3h]
+
+### React Migration [2h]
+- **Migration**: Converted vanilla TypeScript to React + TypeScript
+- **Components**: Created `Popup.tsx` and `Display.tsx` with functional components
+- **Entry Points**: Added `popup-entry.tsx` and `display-entry.tsx`
+- **Configuration**: Added @vitejs/plugin-react to Vite config
+- **Dependencies**: Installed react@18.3.1, react-dom@18.3.1
+
+### Security Fixes [1h]
+- **CRITICAL**: Replaced regex URL validation with URL constructor
+- **MEDIUM**: Added useEffect cleanup for setTimeout (memory leak prevention)
+- **LOW**: Made error handling explicit with throw statements
+- **Documentation**: Added security comments explaining validation safety
+- **Validation**: All checks passed (type-check, build, extension validation) 

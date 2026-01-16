@@ -1,16 +1,6 @@
 // Content script for Kokoro Reader - extracts readable content using @mozilla/readability
 import { Readability } from '@mozilla/readability';
-
-interface ExtractedContent {
-  title: string;
-  content: string;
-  textContent: string;
-  length: number;
-  excerpt: string;
-  byline: string;
-  siteName: string;
-  url: string;
-}
+import { ExtractedContent } from '../types/content';
 
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
