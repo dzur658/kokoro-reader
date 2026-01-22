@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sanitizeHtml, escapeHtml } from '../utils/sanitizer';
 import { ExtractedContent } from '../types/content';
+import { AudioControls } from '../components/AudioControls';
 import './Display.css';
 
 // Delay before cleaning up storage to handle page refresh scenarios
@@ -112,6 +113,10 @@ export const Display: React.FC = () => {
           className="content"
           dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.content || '') }}
         />
+
+        {content.textContent && (
+          <AudioControls text={content.textContent} />
+        )}
 
         <div className="stats">
           <div className="stats-title">Article Statistics:</div>

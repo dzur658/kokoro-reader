@@ -1,6 +1,7 @@
 // Content script for Kokoro Reader - extracts readable content using @mozilla/readability
 import { Readability } from '@mozilla/readability';
 import { ExtractedContent } from '../types/content';
+import { safeMessagePassing } from '../utils/extension-utils';
 
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
@@ -30,8 +31,8 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
           url: window.location.href
         };
         
-        // Send extracted content to background script and wait for response
-        chrome.runtime.sendMessage({
+        // Send extracted content to background script using safe message passing
+        safeMessagePassing({
           action: 'extractContent',
           content: extractedContent
         }, (response) => {
